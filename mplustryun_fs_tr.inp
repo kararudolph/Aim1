@@ -1,0 +1,19 @@
+DATA: FILE is /Users/krudolph/Documents/PhD/NIMH/Ncsa/n4.dat;
+VARIABLE: NAMES = urbanicity zmedinc zmedval zperocc zperhs zpercoll zperfanic
+     Id2;
+grouping is urbanicity (0=nonurban 1=urbanfringe 2=urbancenter);
+IDVARIABLE = Id2;
+usevar are zmedinc zmedval zperocc zperhs zpercoll zperfanic urbanicity;
+analysis: 
+model = nomeanstructure;
+information = expected;
+model:
+f1 BY zmedinc* zmedval zperocc zperhs zpercoll zperfanic;
+f1@1;
+model urbanfringe:
+f1 BY zmedinc* zmedval zperocc zperhs zpercoll zperfanic;
+f1@1;
+model urbancenter:
+f1 BY zmedinc* zmedval zperocc zperhs zpercoll zperfanic;
+f1@1;
+SAVEDATA: FILE IS fscores_2.csv; SAVE = FSCORES;

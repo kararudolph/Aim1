@@ -1,0 +1,310 @@
+Mplus VERSION 6.12 DEMO (Mac)
+MUTHEN & MUTHEN
+06/09/2012  11:16 AM
+
+INPUT INSTRUCTIONS
+
+  DATA: FILE is /Users/krudolph/Documents/PhD/NIMH/Ncsa/n4.dat;
+  VARIABLE: NAMES = urbanicity zmedinc zmedval zperocc zperhs zpercoll zperfanic
+       Id2;
+  grouping is urbanicity (0=nonurban 1=urbanfringe 2=urbancenter);
+  IDVARIABLE = Id2;
+  usevar are zmedinc zmedval zperocc zperhs zpercoll zperfanic urbanicity;
+  analysis:
+  model = nomeanstructure;
+  information = expected;
+  model:
+  f1 BY zmedinc* zmedval zperocc zperhs zpercoll zperfanic;
+  f1@1;
+  model urbanfringe:
+  f1 BY zmedinc* zmedval zperocc zperhs zpercoll zperfanic;
+  f1@1;
+  model urbancenter:
+  f1 BY zmedinc* zmedval zperocc zperhs zpercoll zperfanic;
+  f1@1;
+  SAVEDATA: FILE IS fscores_2.csv; SAVE = FSCORES;
+
+
+
+*** WARNING
+  Variable name contains more than 8 characters.
+  Only the first 8 characters will be printed in the output.
+  Variable: URBANICITY
+*** WARNING
+  Variable name contains more than 8 characters.
+  Only the first 8 characters will be printed in the output.
+  Variable: ZPERFANIC
+   2 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 3
+Number of observations
+   Group NONURBAN                                              319
+   Group URBANFRINGE                                          1004
+   Group URBANCENTER                                          2017
+
+Number of dependent variables                                    6
+Number of independent variables                                  0
+Number of continuous latent variables                            1
+
+Observed dependent variables
+
+  Continuous
+   ZMEDINC     ZMEDVAL     ZPEROCC     ZPERHS      ZPERCOLL    ZPERFANIC
+
+Continuous latent variables
+   F1
+
+Variables with special functions
+
+  Grouping variable     URBANICI
+  ID variable           ID2
+
+Estimator                                                       ML
+Information matrix                                        EXPECTED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+
+Input data file(s)
+  /Users/krudolph/Documents/PhD/NIMH/Ncsa/n4.dat
+
+Input data format  FREE
+
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       44
+
+Loglikelihood
+
+          H0 Value                      -18730.196
+          H1 Value                      -16669.459
+
+Information Criteria
+
+          Akaike (AIC)                   37548.393
+          Bayesian (BIC)                 37817.397
+          Sample-Size Adjusted BIC       37677.589
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                           4121.476
+          Degrees of Freedom                    37
+          P-Value                           0.0000
+
+Chi-Square Contributions From Each Group
+
+          NONURBAN                         891.767
+          URBANFRINGE                     1218.234
+          URBANCENTER                     2011.475
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.315
+          90 Percent C.I.                    0.307  0.323
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                0.810
+          TLI                                0.769
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                          21586.475
+          Degrees of Freedom                    45
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.363
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Group NONURBAN
+
+ F1       BY
+    ZMEDINC            0.597      0.034     17.397      0.000
+    ZMEDVAL            0.425      0.031     13.713      0.000
+    ZPEROCC            0.805      0.040     19.909      0.000
+    ZPERHS             0.978      0.042     23.314      0.000
+    ZPERCOLL           0.699      0.037     18.907      0.000
+    ZPERFANIC          1.010      0.045     22.657      0.000
+
+ Means
+    F1                 0.000      0.000    999.000    999.000
+
+ Intercepts
+    ZMEDINC           -0.894      0.030    -29.917      0.000
+    ZMEDVAL           -0.946      0.027    -35.524      0.000
+    ZPEROCC           -1.114      0.036    -31.087      0.000
+    ZPERHS            -0.895      0.035    -25.580      0.000
+    ZPERCOLL          -1.077      0.035    -30.996      0.000
+    ZPERFANIC         -0.976      0.035    -27.568      0.000
+
+ Variances
+    F1                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    ZMEDINC            0.190      0.016     11.830      0.000
+    ZMEDVAL            0.208      0.017     12.264      0.000
+    ZPEROCC            0.190      0.017     11.146      0.000
+    ZPERHS             0.076      0.011      7.008      0.000
+    ZPERCOLL           0.184      0.016     11.489      0.000
+    ZPERFANIC          0.116      0.014      8.545      0.000
+
+Group URBANFRINGE
+
+ F1       BY
+    ZMEDINC            0.634      0.020     31.318      0.000
+    ZMEDVAL            0.532      0.017     30.899      0.000
+    ZPEROCC            0.880      0.021     41.929      0.000
+    ZPERHS             0.793      0.022     35.933      0.000
+    ZPERCOLL           0.853      0.021     40.996      0.000
+    ZPERFANIC          0.797      0.022     37.045      0.000
+
+ Means
+    F1                 1.198      0.059     20.390      0.000
+
+ Intercepts
+    ZMEDINC           -0.894      0.030    -29.917      0.000
+    ZMEDVAL           -0.946      0.027    -35.524      0.000
+    ZPEROCC           -1.114      0.036    -31.087      0.000
+    ZPERHS            -0.895      0.035    -25.580      0.000
+    ZPERCOLL          -1.077      0.035    -30.996      0.000
+    ZPERFANIC         -0.976      0.035    -27.568      0.000
+
+ Variances
+    F1                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    ZMEDINC            0.364      0.017     21.459      0.000
+    ZMEDVAL            0.232      0.011     21.353      0.000
+    ZPEROCC            0.068      0.006     12.086      0.000
+    ZPERHS             0.291      0.014     20.533      0.000
+    ZPERCOLL           0.098      0.006     15.398      0.000
+    ZPERFANIC          0.234      0.012     20.030      0.000
+
+Group URBANCENTER
+
+ F1       BY
+    ZMEDINC            0.886      0.018     48.167      0.000
+    ZMEDVAL            0.905      0.021     43.384      0.000
+    ZPEROCC            1.046      0.017     60.718      0.000
+    ZPERHS             0.798      0.017     45.685      0.000
+    ZPERCOLL           1.026      0.017     59.333      0.000
+    ZPERFANIC          0.891      0.018     50.550      0.000
+
+ Means
+    F1                 1.154      0.045     25.854      0.000
+
+ Intercepts
+    ZMEDINC           -0.894      0.030    -29.917      0.000
+    ZMEDVAL           -0.946      0.027    -35.524      0.000
+    ZPEROCC           -1.114      0.036    -31.087      0.000
+    ZPERHS            -0.895      0.035    -25.580      0.000
+    ZPERCOLL          -1.077      0.035    -30.996      0.000
+    ZPERFANIC         -0.976      0.035    -27.568      0.000
+
+ Variances
+    F1                 1.000      0.000    999.000    999.000
+
+ Residual Variances
+    ZMEDINC            0.396      0.013     30.163      0.000
+    ZMEDVAL            0.707      0.023     30.837      0.000
+    ZPEROCC            0.053      0.004     13.611      0.000
+    ZPERHS             0.430      0.014     30.576      0.000
+    ZPERCOLL           0.085      0.004     19.547      0.000
+    ZPERFANIC          0.316      0.011     29.717      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.939E-03
+       (ratio of smallest to largest eigenvalue)
+
+
+SAMPLE STATISTICS FOR ESTIMATED FACTOR SCORES
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              F1
+              ________
+ 1              1.131
+
+
+           Covariances
+              F1
+              ________
+ F1             0.927
+
+
+           Correlations
+              F1
+              ________
+ F1             1.000
+
+
+SAVEDATA INFORMATION
+
+  Order and format of variables
+
+    ZMEDINC        F10.3
+    ZMEDVAL        F10.3
+    ZPEROCC        F10.3
+    ZPERHS         F10.3
+    ZPERCOLL       F10.3
+    ZPERFANI       F10.3
+    ID2            F13.0
+    F1             F10.3
+    URBANICITY     I2
+
+  Save file
+    fscores_2.csv
+
+  Save file format
+    6F10.3 F13.0 F10.3 I2
+
+  Save file record length    5000
+
+
+     Beginning Time:  11:16:40
+        Ending Time:  11:16:40
+       Elapsed Time:  00:00:00
+
+
+Mplus VERSION 6.12 DEMO (Mac) has the following limitations:
+  Maximum number of dependent variables: 6
+  Maximum number of independent variables: 2
+  Maximum number of between variables: 2
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2011 Muthen & Muthen
